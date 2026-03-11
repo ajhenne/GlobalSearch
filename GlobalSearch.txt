@@ -1,0 +1,17 @@
+## APIVersion: 101049
+## Title: GlobalSearch
+## Version: 0.01
+## AddOnVersion: 1
+## Author: Henne
+## Description: A global search filter for all ESO items.
+## SavedVariables: GlobalSearchSavedVariables
+## DependsOn: LibAddonMenu-2.0>=28
+
+Bindings.xml
+GlobalSearch.xml
+GlobalSearch.lua
+Settings.lua
+
+# This Add-on is not created by, affiliated with, or sponsored by, ZeniMax Media Inc. or its affiliates.
+# The Elder Scrolls® and related logos are registered trademarks or trademarks of ZeniMax Media Inc. in the United States
+# and/or other countries. All rights reserved.
