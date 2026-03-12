@@ -5,7 +5,7 @@
 ## Author: Henne
 ## Description: A global search filter for all ESO items.
 ## SavedVariables: GlobalSearchSavedVariables
-## DependsOn: LibAddonMenu-2.0>=28
+## DependsOn: LibAddonMenu-2.0>=28 LibSets
 
 Bindings.xml
 GlobalSearch.xml
