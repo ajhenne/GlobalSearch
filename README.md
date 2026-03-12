@@ -2,8 +2,6 @@
 
 A global search interface for *The Elder Scrolls Online*. This offers a lightweight and unified search bar to quickly find almost any item (sets, recipes, crafting materials and more).
 
----
-
 ## Features
 
 - **Item Sets**: search across all sets within the game.
@@ -15,8 +13,6 @@ The goal of this addon is not to add a variety of features. It's focus is a quic
 - Quick toggle between plans and crafted materials.
 - Link to chat feature.
 
----
-
 ## How to use
 
 Adds two commands:
@@ -25,14 +21,12 @@ Adds two commands:
 
 Also provides a keybind in the setting to quickly bring up the search window.
 
----
 
 ## Dependencies
 
 - LibSets
 - LibAddonMenu-2.0
 
----
 
 ## Installation
 
