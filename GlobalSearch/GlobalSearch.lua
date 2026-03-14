@@ -224,6 +224,7 @@ function GlobalSearch.IsMaterial(itemType)
         [ITEMTYPE_CLOTHIER_MATERIAL] = true,
         [ITEMTYPE_WOODWORKING_MATERIAL] = true,
         [ITEMTYPE_JEWELRYCRAFTING_MATERIAL] = true,
+        [ITEMTYPE_FURNISHING_MATERIAL] = true,
         [ITEMTYPE_STYLE_MATERIAL] = true,
         [ITEMTYPE_INGREDIENT] = true,
         [ITEMTYPE_ENCHANTING_RUNE_POTENCY] = true,
