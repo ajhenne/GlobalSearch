@@ -51,6 +51,13 @@ function GlobalSearch.CreateSettingsMenu()
             getFunc = function() return GlobalSearch.savedVars.searchSets end,
             setFunc = function(v) GlobalSearch.savedVars.searchSets = v end,
         },
+        {
+            type = "checkbox",
+            name = "Furnishings",
+            tooltip = "Include furnishing items.",
+            getFunc = function() return GlobalSearch.savedVars.searchFurnishings end,
+            setFunc = function(v) GlobalSearch.savedVars.searchFurnishings = v end,
+        },
         -- {
         --     type = "colorpicker",
         --     name = "Highlight Color",

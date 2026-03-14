@@ -1,0 +1,190 @@
+<GuiXml>
+    <Controls>
+        <!-- Modern Result Row Template (Optional, for your Lua to use) -->
+        <Control name="GS_ResultRow" virtual="true" mouseEnabled="true">
+            <Dimensions x="270" y="25" />
+            <Controls>
+                <Texture name="$(parent)Highlight"
+                    textureFile="EsoUI/Art/Buttons/generic_highlight.dds" alpha="0.3" hidden="true">
+                    <AnchorFill />
+                </Texture>
+                <Label name="$(parent)Name" font="ZoFontWinH5" wrapMode="ELLIPSIS"
+                    mouseEnabled="false">
+                    <AnchorFill />
+                </Label>
+            </Controls>
+        </Control>
+
+        <TopLevelControl name="GS_Window" mouseEnabled="true" movable="true" hidden="true">
+            <Dimensions x="1500" y="700" />
+            <Anchor point="CENTER" />
+
+            <Controls>
+                <!-- MAIN BACKGROUND -->
+                <Backdrop name="$(parent)BG" inherits="ZO_DefaultBackdrop" alpha="1">
+                    <AnchorFill />
+                </Backdrop>
+
+                <!-- TITLE -->
+                <Label name="$(parent)Header" font="ZoFontHeader4"
+                    color="INTERFACE_COLOR_TYPE_TEXT_COLORS:INTERFACE_TEXT_COLOR_SELECTED"
+                    text="GLOBAL SEARCH">
+                    <Anchor point="TOP" offsetX="" offsetY="20" />
+                </Label>
+
+                <!-- CLOSE BUTTON -->
+                <Button name="$(parent)Close" inherits="ZO_CloseButton">
+                    <Anchor point="TOPRIGHT" offsetX="-10" offsetY="10" />
+                    <OnClicked>GlobalSearch.DisplayMenu()</OnClicked>
+                </Button>
+
+                <!-- SEARCH BAR -->
+                <Control name="$(parent)SearchContainer">
+                    <Dimensions x="1000" y="35" />
+                    <Anchor point="TOP" offsetY="60" offsetX="" />
+                    <Controls>
+                        <Backdrop name="$(parent)InputBG" inherits="ZO_EditBackdrop">
+                            <AnchorFill />
+                            <Controls>
+                                <EditBox name="GS_WindowSearchBar"
+                                    inherits="ZO_DefaultEditForBackdrop" font="ZoFontWinH2"
+                                    editEnabled="true" maxLetters="100">
+                                    <OnTextChanged>
+                                        GlobalSearch.OnSearchTextChanged(self)
+                                    </OnTextChanged>
+                                </EditBox>
+                            </Controls>
+                        </Backdrop>
+                    </Controls>
+                </Control>
+
+                <!-- RESULTS SECTION -->
+                <Control name="$(parent)PanelContainer">
+                    <Dimensions x="1460" y="530" />
+                    <Anchor point="TOP" relativeTo="$(parent)SearchContainer" relativePoint="BOTTOM"
+                        offsetY="20" offsetX="0" />
+                    <Controls>
+
+                        <!-- RESULTS - SETS -->
+                        <Control name="GS_Panel_Sets">
+                            <Dimensions x="280" y="530" />
+                            <Anchor point="TOPLEFT" />
+                            <Controls>
+                                <Label name="$(parent)Title" font="ZoFontHeader2" text="SETS"
+                                    color="FFD700" horizontalAlignment="CENTER">
+                                    <Anchor point="TOPLEFT" offsetX="0" />
+                                    <Anchor point="TOPRIGHT" />
+                                </Label>
+                                <Control name="GS_List_Sets" inherits="ZO_ScrollContainer">
+                                    <Anchor point="TOPLEFT" relativeTo="$(parent)Title"
+                                        relativePoint="BOTTOMLEFT" offsetY="15" />
+                                    <Anchor point="BOTTOMRIGHT" />
+                                </Control>
+                            </Controls>
+                        </Control>
+
+                        <Texture name="$(parent)Divider1" color="333333">
+                            <Dimensions x="1" y="530" />
+                            <Anchor point="TOPLEFT" offsetX="287" />
+                        </Texture>
+
+                        <!-- RESULTS - RECIPES -->
+                        <Control name="GS_Panel_Recipes">
+                            <Dimensions x="280" y="530" />
+                            <Anchor point="TOPLEFT" offsetX="295" />
+                            <Controls>
+                                <Label name="$(parent)Title" font="ZoFontHeader2" text="RECIPES"
+                                    color="FFD700" horizontalAlignment="CENTER">
+                                    <Anchor point="TOPLEFT" offsetX="0" />
+                                    <Anchor point="TOPRIGHT" />
+                                </Label>
+                                <Control name="GS_List_Recipes" inherits="ZO_ScrollContainer">
+                                    <Anchor point="TOPLEFT" relativeTo="$(parent)Title"
+                                        relativePoint="BOTTOMLEFT" offsetY="15" />
+                                    <Anchor point="BOTTOMRIGHT" />
+                                </Control>
+                            </Controls>
+                        </Control>
+
+                        <Texture name="$(parent)Divider2" color="333333">
+                            <Dimensions x="1" y="530" />
+                            <Anchor point="TOPLEFT" offsetX="582" />
+                        </Texture>
+
+                        <!-- RESULTS - FURNISHINGS -->
+                        <Control name="GS_Panel_Furnishings">
+                            <Dimensions x="280" y="530" />
+                            <Anchor point="TOPLEFT" offsetX="590" />
+                            <Controls>
+                                <Label name="$(parent)Title" font="ZoFontHeader2" text="FURNISHINGS"
+                                    color="FFD700" horizontalAlignment="CENTER">
+                                    <Anchor point="TOPLEFT" offsetX="0" />
+                                    <Anchor point="TOPRIGHT" />
+                                </Label>
+                                <Control name="GS_List_Furnishings" inherits="ZO_ScrollContainer">
+                                    <Anchor point="TOPLEFT" relativeTo="$(parent)Title"
+                                        relativePoint="BOTTOMLEFT" offsetY="15" />
+                                    <Anchor point="BOTTOMRIGHT" />
+                                </Control>
+                            </Controls>
+                        </Control>
+
+                        <Texture name="$(parent)Divider3" color="333333">
+                            <Dimensions x="1" y="530" />
+                            <Anchor point="TOPLEFT" offsetX="877" />
+                        </Texture>
+
+
+                        <!-- RESULTS - MATERIALS -->
+                        <Control name="GS_Panel_Materials">
+                            <Dimensions x="280" y="530" />
+                            <Anchor point="TOPLEFT" offsetX="885" />
+                            <Controls>
+                                <Label name="$(parent)Title" font="ZoFontHeader2" text="MATERIALS"
+                                    color="FFD700" horizontalAlignment="CENTER">
+                                    <Anchor point="TOPLEFT" offsetX="0" />
+                                    <Anchor point="TOPRIGHT" />
+                                </Label>
+                                <Control name="GS_List_Materials" inherits="ZO_ScrollContainer">
+                                    <Anchor point="TOPLEFT" relativeTo="$(parent)Title"
+                                        relativePoint="BOTTOMLEFT" offsetY="15" />
+                                    <Anchor point="BOTTOMRIGHT" />
+                                </Control>
+                            </Controls>
+                        </Control>
+
+                        <Texture name="$(parent)Divider4" color="333333">
+                            <Dimensions x="1" y="530" />
+                            <Anchor point="TOPLEFT" offsetX="1172" />
+                        </Texture>
+
+                        <!-- RESULTS - COLLECTIBLES -->
+                        <Control name="GS_Panel_Collectibles">
+                            <Dimensions x="280" y="530" />
+                            <Anchor point="TOPLEFT" offsetX="1180" />
+                            <Controls>
+                                <Label name="$(parent)Title" font="ZoFontHeader2"
+                                    text="COLLECTIBLES"
+                                    color="FFD700" horizontalAlignment="CENTER">
+                                    <Anchor point="TOPLEFT" offsetX="0" />
+                                    <Anchor point="TOPRIGHT" />
+                                </Label>
+                                <Control name="GS_List_Collectibles" inherits="ZO_ScrollContainer">
+                                    <Anchor point="TOPLEFT" relativeTo="$(parent)Title"
+                                        relativePoint="BOTTOMLEFT" offsetY="15" />
+                                    <Anchor point="BOTTOMRIGHT" />
+                                </Control>
+                            </Controls>
+                        </Control>
+
+                    </Controls>
+                </Control>
+
+                <!-- Footer Status -->
+                <Label name="GS_WindowStatus" font="ZoFontGameSmall" color="666666">
+                    <Anchor point="BOTTOMLEFT" offsetX="20" offsetY="-10" />
+                </Label>
+            </Controls>
+        </TopLevelControl>
+    </Controls>
+</GuiXml>

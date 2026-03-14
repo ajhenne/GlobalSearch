@@ -1,11 +1,11 @@
-## APIVersion: 101049
 ## Title: GlobalSearch
+## APIVersion: 101049
 ## Version: 0.01
 ## AddOnVersion: 1
-## Author: Henne
+## Author: AHenneUK
 ## Description: A global search filter for all ESO items.
 ## SavedVariables: GlobalSearchSavedVariables
-## DependsOn: LibAddonMenu-2.0>=28 LibSets
+## DependsOn: LibAddonMenu-2.0>=28 LibSets GlobalSearchData
 
 Bindings.xml
 GlobalSearch.xml
